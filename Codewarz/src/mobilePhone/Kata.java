@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Kata {
 	public static char asciinum(int num) {
 		HashMap<Integer, Integer> mob = new HashMap<Integer, Integer>();
-		mob.put(0, 32);
+		mob.put(0, 32); // jezeli chce zrobic 0 jako cyfre zrobi spacje 
 		mob.put(2, 97);
 		mob.put(3, 100);
 		mob.put(4, 103);
@@ -47,9 +47,9 @@ public class Kata {
 		case "****":
 			return '=';
 		case "#":
-			return '#';
+			return '#';   // nie dziala wersja uppercase
 		case "-":
-			return '-';
+			return '-';  // jak zrobic liczbe ? system do liczb jest zesrany bo jak bedzie ta sama cyfra w ciagu liczb to 
 		default: {
 			return asciinum(Integer.parseInt(s));
 		}
