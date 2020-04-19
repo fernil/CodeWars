@@ -3,10 +3,10 @@ package mobilePhone;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Kata {	
+public class Kata {
 	public static char asciinum(int num) {
 		HashMap<Integer, Integer> mob = new HashMap<Integer, Integer>();
-		mob.put(0, 32); 
+		mob.put(0, 32);
 		mob.put(2, 97);
 		mob.put(3, 100);
 		mob.put(4, 103);
@@ -47,15 +47,15 @@ public class Kata {
 		case "****":
 			return '=';
 		case "#":
-			return '#';   
+			return '#';
 		case "a":
-			return '1';  
+			return '1';
 		case "b":
 			return '2';
 		case "c":
 			return '3';
 		case "d":
-			return '4';		
+			return '4';
 		case "e":
 			return '5';
 		case "f":
@@ -102,45 +102,49 @@ public class Kata {
 		for (String g : liczby) {
 			sms = sms + withStar(g);
 		}
-		
+
 		return sms;
 	}
-	
+
 	public static String mes(String sms) {
-		String n=sendMessage(sms);
-		String[] stList=n.split("#");
-		String retMes="";
-		for(int i=0;i<stList.length;i++) {
-			if(i%2!=0) {
-				retMes+=stList[i].toUpperCase();
-			}else retMes+=stList[i];
-				
+		String n = sendMessage(sms);
+		String[] stList = n.split("#");
+		String retMes = "";
+		for (int i = 0; i < stList.length; i++) {
+			if (i % 2 != 0) {
+				retMes += stList[i].toUpperCase();
+			} else
+				retMes += stList[i];
+
 		}
-		
+
 		return retMes;
-		
+
 	}
+
 	public static String numMes(String mess) {
-		char[] ch=mess.toCharArray();
-		ArrayList<Character> arr=new ArrayList<>();
-	
-		for(char c:ch) {
-			arr.add(c);			
+		char[] ch = mess.toCharArray();
+		ArrayList<Character> arr = new ArrayList<>();
+
+		for (char c : ch) {
+			arr.add(c);
 		}
-		for(int i=0;i<arr.size();i++) {
-			if(arr.get(i)=='-') {			
-				arr.set(i-1,numMap(Integer.parseInt(String.valueOf(arr.get(i-1)+""))));
+		for (int i = 0; i < arr.size(); i++) {
+			if (arr.get(i) == '-') {
+				arr.set(i - 1, numMap(Integer.parseInt(String.valueOf(arr.get(i - 1) + ""))));
 				arr.remove(i);
 			}
-		}String ret="";
-		for(char z:arr) {
-			ret+=z;
 		}
-		return  ret;		
-		
+		String ret = "";
+		for (char z : arr) {
+			ret += z;
+		}
+		return ret;
+
 	}
+
 	public static char numMap(int num) {
-		HashMap<Integer, Character> map=new HashMap<>();
+		HashMap<Integer, Character> map = new HashMap<>();
 		map.put(0, 'z');
 		map.put(1, 'a');
 		map.put(2, 'b');
@@ -151,9 +155,8 @@ public class Kata {
 		map.put(7, 'g');
 		map.put(8, 'h');
 		map.put(9, 'i');
-	
-	return  map.get(num);
-	}
 
+		return map.get(num);
+	}
 
 }
